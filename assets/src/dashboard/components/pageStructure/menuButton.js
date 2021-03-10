@@ -26,47 +26,48 @@ import { __ } from '@web-stories-wp/i18n';
  */
 import { Menu as MenuSvg } from '../../icons';
 import { useNavContext } from '../navProvider';
+import { MIN_DASHBOARD_WIDTH } from '../../constants';
+import {
+  Button,
+  BUTTON_TYPES,
+  BUTTON_SIZES,
+  BUTTON_VARIANTS,
+} from '../../../design-system';
 
 const MenuIcon = styled(MenuSvg).attrs({ width: 24, height: 24 })`
   display: block;
   color: ${({ theme }) => theme.DEPRECATED_THEME.colors.gray900};
 `;
 
-const TransparentButton = styled.button`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
+const MenuButton = styled(Button)`
   padding: 0;
   margin-right: 16px;
-  border: ${({ theme }) => theme.DEPRECATED_THEME.borders.transparent};
-  background: transparent;
-
-  &:focus {
-    border: ${({ theme }) => theme.DEPRECATED_THEME.borders.action};
-  }
 
   ${({ showOnlyOnSmallViewport }) =>
     showOnlyOnSmallViewport &&
     css`
       display: none;
-      @media ${({ theme }) => theme.DEPRECATED_THEME.breakpoint.tablet} {
+      @media screen and (max-width: ${MIN_DASHBOARD_WIDTH}px) {
         display: inline-block;
       }
     `}
 `;
 
 export default function NavMenuButton({ showOnlyOnSmallViewport }) {
-  const { actions } = useNavContext();
+  const { actions, state } = useNavContext();
+
   return (
-    <TransparentButton
+    <MenuButton
       onClick={actions.toggleSideBar}
       showOnlyOnSmallViewport={showOnlyOnSmallViewport}
+      type={BUTTON_TYPES.TERTIARY}
+      size={BUTTON_SIZES.SMALL}
+      variant={BUTTON_VARIANTS.SQUARE}
       aria-label={__('toggle main navigation', 'web-stories')}
+      aria-pressed={state.sideBarVisible}
     >
       <MenuIcon aria-hidden />
-    </TransparentButton>
+    </MenuButton>
   );
 }
 
