@@ -63,6 +63,10 @@ const DialogActions = styled.div`
     }
   }
 `;
+/**
+ * Dialogs should be wrapped in a ThemeProvider
+ * and given the inverted theme to the app.
+ */
 
 export function Dialog({ children, title, actions, isOpen, onClose, ...rest }) {
   return (
