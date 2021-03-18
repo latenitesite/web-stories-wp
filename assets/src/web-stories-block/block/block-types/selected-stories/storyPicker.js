@@ -188,8 +188,6 @@ function StoryPicker({
     if (isSortingStories) {
       setFetchingForTheFirstTime(false);
       return;
-    } else if (!orderedStories.length) {
-      setFetchingForTheFirstTime(true);
     }
 
     fetchWebStories();
