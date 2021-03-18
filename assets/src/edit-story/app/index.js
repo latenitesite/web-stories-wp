@@ -28,6 +28,8 @@ import { useStory } from './story';
 
 import { useCanvas } from './canvas';
 import { useCurrentUser } from './currentUser';
+import { useHelpCenter } from './helpCenter';
+import { useUserOnboarding } from './userOnboarding';
 
 export {
   useHistory,
@@ -41,4 +43,6 @@ export {
   useMedia,
   useCanvas,
   useCurrentUser,
+  useHelpCenter,
+  useUserOnboarding,
 };

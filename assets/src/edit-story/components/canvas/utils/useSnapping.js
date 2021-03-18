@@ -25,7 +25,7 @@ import { useCallback, useEffect } from 'react';
 import { FULLBLEED_RATIO } from '../../../constants';
 import { useGlobalIsKeyPressed } from '../../../../design-system';
 import { useDropTargets } from '../../dropTargets';
-import { useCanvas } from '../../../app';
+import { useCanvas, useUserOnboarding } from '../../../app';
 
 function useSnapping({
   isDragging,
@@ -59,6 +59,8 @@ function useSnapping({
     activeDropTargetId: state.state.activeDropTargetId,
   }));
 
+  const triggerOnboarding = useUserOnboarding(({ SAFE_ZONE }) => SAFE_ZONE);
+
   // ⌘ key disables snapping
   const snapDisabled = useGlobalIsKeyPressed('meta');
   canSnap = canSnap && !snapDisabled && !activeDropTargetId;
@@ -67,10 +69,12 @@ function useSnapping({
     (visible) => {
       if (designSpaceGuideline) {
         designSpaceGuideline.style.visibility = visible ? 'visible' : 'hidden';
+        visible && triggerOnboarding();
       }
     },
-    [designSpaceGuideline]
+    [designSpaceGuideline, triggerOnboarding]
   );
+
   const handleSnap = useCallback(
     ({ elements }) =>
       // Show design space if we're snapping to any of its edges
