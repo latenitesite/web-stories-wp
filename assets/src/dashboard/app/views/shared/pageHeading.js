@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,10 +19,15 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { __ } from '@web-stories-wp/i18n';
+import {
+  Display,
+  Search,
+  THEME_CONSTANTS,
+} from '@web-stories-wp/design-system';
+
 /**
  * Internal dependencies
  */
-import { Display, Search, THEME_CONSTANTS } from '../../../../design-system';
 import { NavMenuButton, StandardViewContentGutter } from '../../../components';
 
 const HeadingContainer = styled(StandardViewContentGutter)`

@@ -20,7 +20,7 @@
 import { TEMPLATES_GALLERY_STATUS, VIEW_STYLE } from '../../../../../constants';
 import { renderWithProviders } from '../../../../../testUtils';
 import LayoutProvider from '../../../../../components/layout/provider';
-import Content from '../';
+import Content from '..';
 
 const fakeTemplates = [
   {
@@ -58,13 +58,8 @@ const fakeTemplates = [
   },
 ];
 
-jest.mock(
-  '../../../../../../edit-story/components/previewPage/previewPage.js',
-  () => () => null
-);
-jest.mock('../../../../../app/font/fontProvider.js', () => ({ children }) =>
-  children
-);
+jest.mock('@web-stories-wp/preview', () => () => null);
+jest.mock('@web-stories-wp/fonts', () => ({ children }) => children);
 
 describe('Explore Templates <Content />', function () {
   afterEach(() => {

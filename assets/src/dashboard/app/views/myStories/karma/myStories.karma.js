@@ -19,11 +19,11 @@
  */
 import { within } from '@testing-library/react';
 import { getRelativeDisplayDate } from '@web-stories-wp/date';
+import { stripHTML } from '@web-stories-wp/design-system';
 
 /**
  * Internal dependencies
  */
-import stripHTML from '../../../../../edit-story/utils/stripHTML';
 import Fixture from '../../../../karma/fixture';
 import {
   PRIMARY_PATHS,

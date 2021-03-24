@@ -19,13 +19,12 @@
  */
 import PropTypes from 'prop-types';
 import { useMemo } from 'react';
+import { createContext } from '@web-stories-wp/react';
 
 /**
  * Internal dependencies
  */
 import { useConfig } from '../config';
-import { createContext } from '../../../design-system';
-import dataAdapter from './wpAdapter';
 import useMediaApi from './useMediaApi';
 import useStoryApi from './useStoryApi';
 import useTemplateApi from './useTemplateApi';
@@ -34,7 +33,7 @@ import useSettingsApi from './useSettingsApi';
 
 export const ApiContext = createContext({ state: {}, actions: {} });
 
-export default function ApiProvider({ children }) {
+export default function ApiProvider({ children, dataAdapter }) {
   const { api, editStoryURL, cdnURL, encodeMarkup } = useConfig();
 
   const { currentUser, api: usersApi } = useUsersApi(dataAdapter, {
@@ -97,4 +96,9 @@ export default function ApiProvider({ children }) {
 
 ApiProvider.propTypes = {
   children: PropTypes.node,
+  dataAdapter: PropTypes.shape({
+    get: PropTypes.func,
+    post: PropTypes.func,
+    deleteRequest: PropTypes.func,
+  }).isRequired,
 };

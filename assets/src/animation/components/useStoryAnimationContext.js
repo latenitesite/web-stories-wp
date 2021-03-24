@@ -13,17 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/**
+ * External dependencies
+ */
+import { identity, useContextSelector } from '@web-stories-wp/react';
+
 /**
  * Internal dependencies
  */
-import { identity, useContextSelector } from '../../design-system';
-import { StoryAnimationContext } from './provider';
+import Context from './context';
 
 function useStoryAnimationContext(selector) {
-  const context = useContextSelector(
-    StoryAnimationContext,
-    selector ?? identity
-  );
+  const context = useContextSelector(Context, selector ?? identity);
   if (!context) {
     throw new Error(
       'Must use `useStoryAnimationContext()` within <StoryAnimation.Provider />'

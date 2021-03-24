@@ -23,12 +23,31 @@ import { act, renderHook } from '@testing-library/react-hooks';
  */
 import { ERRORS } from '../../textContent';
 import useSettingsApi from '../useSettingsApi';
-import wpAdapter from '../wpAdapter';
+
+const dataAdapter = () => ({
+  get: () =>
+    Promise.resolve({
+      headers: {
+        get: () => '1',
+      },
+      json: () =>
+        Promise.resolve([
+          {
+            id: 13,
+            name: 'Music',
+          },
+          {
+            id: 23,
+            name: 'Art',
+          },
+        ]),
+    }),
+});
 
 describe('useSettingsApi', () => {
   it('should return an error when fetching settings API request fails', async () => {
     const { result } = renderHook(() =>
-      useSettingsApi(wpAdapter, { globalStoriesSettingsApi: 'wordpress' })
+      useSettingsApi(dataAdapter, { globalStoriesSettingsApi: 'wordpress' })
     );
 
     await act(async () => {
@@ -42,7 +61,7 @@ describe('useSettingsApi', () => {
 
   it('should return an error when updating settings API request fails', async () => {
     const { result } = renderHook(() =>
-      useSettingsApi(wpAdapter, { globalStoriesSettingsApi: 'wordpress' })
+      useSettingsApi(dataAdapter, { globalStoriesSettingsApi: 'wordpress' })
     );
 
     await act(async () => {

@@ -24,7 +24,7 @@ import { useCallback, useMemo, useEffect } from 'react';
  */
 import { Layout, ScrollToTop } from '../../../components';
 import { useTemplateView } from '../../../utils';
-import { PreviewStoryView } from '../';
+import PreviewStoryView from '../previewStory';
 
 import useApi from '../../api/useApi';
 import Content from './content';

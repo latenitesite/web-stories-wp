@@ -22,9 +22,8 @@ import { act, renderHook } from '@testing-library/react-hooks';
  * Internal dependencies
  */
 import useTagsApi from '../useTagsApi';
-import wpAdapter from '../wpAdapter';
 
-jest.mock('../wpAdapter', () => ({
+const dataAdapter = () => ({
   get: () =>
     Promise.resolve({
       headers: {
@@ -33,18 +32,21 @@ jest.mock('../wpAdapter', () => ({
       json: () =>
         Promise.resolve([
           {
-            id: 7,
-            name: 'Fun',
-            slug: 'fun',
+            id: 13,
+            name: 'Music',
+          },
+          {
+            id: 23,
+            name: 'Art',
           },
         ]),
     }),
-}));
+});
 
 describe('useTagsApi', () => {
   it('should return tags in state data when the API request is fired', async () => {
     const { result } = renderHook(() =>
-      useTagsApi(wpAdapter, { tagsApi: 'tags' })
+      useTagsApi(dataAdapter, { tagsApi: 'tags' })
     );
 
     await act(async () => {

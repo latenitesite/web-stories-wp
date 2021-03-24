@@ -22,8 +22,6 @@ import styled, { css } from 'styled-components';
 /**
  * Internal dependencies
  */
-import { StandardViewContentGutter } from '../../../components';
-import { visuallyHiddenStyles } from '../../../utils/visuallyHiddenStyles';
 import {
   Button,
   Headline,
@@ -32,7 +30,9 @@ import {
   Text,
   THEME_CONSTANTS,
   themeHelpers,
-} from '../../../../design-system';
+} from '@web-stories-wp/design-system';
+import { StandardViewContentGutter } from '../../../components';
+import { visuallyHiddenStyles } from '../../../utils/visuallyHiddenStyles';
 
 export const Wrapper = styled.div``;
 

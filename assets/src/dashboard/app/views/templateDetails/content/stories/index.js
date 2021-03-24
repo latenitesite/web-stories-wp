@@ -20,17 +20,18 @@
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
 import styled from 'styled-components';
+import { TransformProvider } from '@web-stories-wp/transform';
+import { FontProvider } from '@web-stories-wp/fonts';
+
 /**
  * Internal dependencies
  */
-import { TransformProvider } from '../../../../../../edit-story/components/transform';
 import { Layout } from '../../../../../components';
 import {
   formattedTemplatesArray,
   STORYBOOK_PAGE_SIZE,
 } from '../../../../../storybookUtils';
-import FontProvider from '../../../../font/fontProvider';
-import Content from '../';
+import Content from '..';
 
 const StorybookLayoutContainer = styled.div`
   margin-top: 40px;

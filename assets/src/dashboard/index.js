@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,59 +14,41 @@
  * limitations under the License.
  */
 
-/**
- * External dependencies
- */
-import Modal from 'react-modal';
-import { StrictMode } from 'react';
-import { render } from 'react-dom';
-import { FlagsProvider } from 'flagged';
-import { updateSettings } from '@web-stories-wp/date';
-import { initializeTracking } from '@web-stories-wp/tracking';
+export * from './types';
 
-/**
- * Internal dependencies
- */
-import App from './app';
-import './style.css'; // This way the general dashboard styles are loaded before all the component styles.
+export { default as App } from './app';
 
-__webpack_public_path__ = global.webStoriesDashboardSettings.publicPath;
+export {
+  CardGrid,
+  CardGridItem,
+  CardPreviewContainer,
+  CardTitle,
+  InfiniteScroller,
+  ScrollToTop,
+  Layout,
+} from './components';
+export {
+  GRID_SPACING,
+  TEXT_INPUT_DEBOUNCE,
+  STORY_SORT_MENU_ITEMS,
+  DROPDOWN_TYPES,
+} from './constants';
 
-/**
- * Initializes the Web Stories dashboard screen.
- *
- * @param {string} id       ID of the root element to render the screen in.
- * @param {Object} config   Story editor settings.
- * @param {Object} flags    The flags for the application.
- */
-const initialize = async (id, config, flags) => {
-  const appElement = document.getElementById(id);
+export {
+  default as storyReducer,
+  defaultStoriesState,
+  ACTION_TYPES as STORY_ACTION_TYPES,
+} from './app/reducer/stories';
 
-  // see http://reactcommunity.org/react-modal/accessibility/
-  Modal.setAppElement(appElement);
+export { reshapeStoryObject } from './app/serializers';
 
-  updateSettings(config.locale);
+export { ERRORS } from './app/textContent';
 
-  // Already tracking screen views in AppContent, no need to send page views as well.
-  await initializeTracking('Dashboard', false);
+export {
+  default as useStoryView,
+  SearchPropTypes,
+  SortPropTypes,
+  PagePropTypes,
+} from './utils/useStoryView';
 
-  render(
-    <FlagsProvider features={flags}>
-      <StrictMode>
-        <App config={config} />
-      </StrictMode>
-    </FlagsProvider>,
-    appElement
-  );
-};
-
-const initializeWithConfig = () => {
-  const { id, config, flags } = window.webStoriesDashboardSettings;
-  initialize(id, config, flags);
-};
-
-if ('loading' === document.readyState) {
-  document.addEventListener('DOMContentLoaded', initializeWithConfig);
-} else {
-  initializeWithConfig();
-}
+export { default as theme } from './theme';

@@ -24,7 +24,7 @@ import PropTypes from 'prop-types';
  * Internal dependencies
  */
 import completeTemplateObject from '../../../../dataUtils/completeTemplateObject';
-import PreviewStory from '../';
+import PreviewStory from '..';
 import { ApiContext } from '../../../api/apiProvider';
 
 export default {

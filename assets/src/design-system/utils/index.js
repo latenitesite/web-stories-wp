@@ -14,16 +14,20 @@
  * limitations under the License.
  */
 
-export { createContext, useContext, identity } from './context';
-export { default as isNullOrUndefinedOrEmptyString } from './isNullOrUndefinedOrEmptyString';
-export { noop } from './noop';
-export { default as addQueryArgs } from './addQueryArgs';
-export { default as labelAccessibilityValidator } from './labelAccessibilityValidator';
-export { default as useBatchingCallback } from './useBatchingCallback';
-export { default as useContextSelector } from './useContextSelector';
-export { default as useFocusOut } from './useFocusOut';
-export { default as useInputEventHandlers } from './useInputEventHandlers';
-export { default as useResizeEffect } from './useResizeEffect';
 export * from './constants';
 export * from './directions';
-export * from './patterns';
+
+export { default as addQueryArgs } from './addQueryArgs';
+export { default as base64Encode } from './base64Encode';
+export { default as escapeHTML } from './escapeHTML';
+export { default as isMouseUpAClick } from './isMouseUpAClick';
+export { default as isNullOrUndefinedOrEmptyString } from './isNullOrUndefinedOrEmptyString';
+export { default as labelAccessibilityValidator } from './labelAccessibilityValidator';
+export { default as localStore } from './localStore';
+export { noop } from './noop';
+export { default as stripHTML } from './stripHTML';
+export { withProtocol, toAbsoluteUrl, isValidUrl } from './url';
+export { default as useFocusOut } from './useFocusOut';
+export { default as useInputEventHandlers } from './useInputEventHandlers';
+export { default as usePrevious } from './usePrevious';
+export { default as useResizeEffect } from './useResizeEffect';

@@ -19,10 +19,11 @@
 import PropTypes from 'prop-types';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
+import { BEZIER } from '@web-stories-wp/animation';
+
 /**
  * Internal dependencies
  */
-import { BEZIER } from '../../../animation/constants';
 import { CORNER_DIRECTIONS, DIRECTIONS } from '../../utils/directions';
 import Menu, { MenuPropTypes } from './menu';
 import { Popover, Shadow } from './styled';

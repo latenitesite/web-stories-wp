@@ -19,14 +19,14 @@
  */
 import styled from 'styled-components';
 import { boolean, text } from '@storybook/addon-knobs';
+import { TransformProvider } from '@web-stories-wp/transform';
+import { FontProvider } from '@web-stories-wp/fonts';
 
 /**
  * Internal dependencies
  */
-import CardGallery from '../index';
+import CardGallery from '..';
 import formattedTemplatesArray from '../../../dataUtils/formattedTemplatesArray';
-import FontProvider from '../../../app/font/fontProvider';
-import { TransformProvider } from '../../../../edit-story/components/transform';
 
 export default {
   title: 'Dashboard/Components/CardGallery',

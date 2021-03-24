@@ -24,6 +24,9 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useRef, useEffect, useState } from 'react';
 import { getRelativeDisplayDate } from '@web-stories-wp/date';
+import { useGridViewKeys } from '@web-stories-wp/keyboard';
+import { useFocusOut } from '@web-stories-wp/design-system';
+import { PageSizePropType } from '@web-stories-wp/preview';
 
 /**
  * Internal dependencies
@@ -40,11 +43,9 @@ import {
 import {
   StoriesPropType,
   StoryMenuPropType,
-  PageSizePropType,
   RenameStoryPropType,
 } from '../../../types';
 import { PAGE_WRAPPER, STORY_STATUS } from '../../../constants';
-import { useGridViewKeys, useFocusOut } from '../../../../design-system';
 import { useConfig } from '../../config';
 import { generateStoryMenu } from '../../../components/popoverMenu/story-menu-generator';
 

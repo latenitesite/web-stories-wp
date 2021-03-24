@@ -19,19 +19,20 @@
  */
 import PropTypes from 'prop-types';
 import { __, sprintf } from '@web-stories-wp/i18n';
-
-/**
- * Internal dependencies
- */
+import { UnitsProvider } from '@web-stories-wp/units';
+import { TransformProvider } from '@web-stories-wp/transform';
+import { FontProvider } from '@web-stories-wp/fonts';
 import {
   Button,
   BUTTON_SIZES,
   BUTTON_TYPES,
   Headline,
   THEME_CONSTANTS,
-} from '../../../../../design-system';
-import { UnitsProvider } from '../../../../../edit-story/units';
-import { TransformProvider } from '../../../../../edit-story/components/transform';
+} from '@web-stories-wp/design-system';
+
+/**
+ * Internal dependencies
+ */
 import { resolveRoute } from '../../../router';
 import { APP_ROUTES } from '../../../../constants';
 import {
@@ -47,7 +48,6 @@ import {
   SortPropTypes,
   ShowStoriesWhileLoadingPropType,
 } from '../../../../utils/useStoryView';
-import FontProvider from '../../../font/fontProvider';
 import { EmptyContentMessage } from '../../shared';
 import StoriesView from './storiesView';
 

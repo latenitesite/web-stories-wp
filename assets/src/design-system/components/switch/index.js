@@ -21,12 +21,13 @@ import styled, { css } from 'styled-components';
 import { forwardRef, useCallback, useMemo, useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { __ } from '@web-stories-wp/i18n';
+import { useKeyDownEffect } from '@web-stories-wp/keyboard';
+
 /**
  * Internal dependencies
  */
 import { themeHelpers } from '../../theme';
 import { Text } from '../typography';
-import { useKeyDownEffect } from '../keyboard';
 
 const SWITCH_HEIGHT = 32;
 const VALUES = {

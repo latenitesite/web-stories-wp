@@ -24,10 +24,9 @@ import { __, sprintf } from '@web-stories-wp/i18n';
  */
 import PropTypes from 'prop-types';
 import { useMemo } from 'react';
-
-/**
- * Internal dependencies
- */
+import { UnitsProvider } from '@web-stories-wp/units';
+import { TransformProvider } from '@web-stories-wp/transform';
+import { FontProvider } from '@web-stories-wp/fonts';
 import {
   Button,
   BUTTON_SIZES,
@@ -35,10 +34,12 @@ import {
   Headline,
   LoadingSpinner,
   THEME_CONSTANTS,
-} from '../../../../../design-system';
-import { useConfig } from '../../../../../edit-story/app';
-import { UnitsProvider } from '../../../../../edit-story/units';
-import { TransformProvider } from '../../../../../edit-story/components/transform';
+} from '@web-stories-wp/design-system';
+
+/**
+ * Internal dependencies
+ */
+import { useConfig } from '../../../config';
 import {
   InfiniteScroller,
   Layout,
@@ -51,7 +52,6 @@ import {
   SearchPropTypes,
 } from '../../../../utils/useTemplateView';
 import { TemplatesPropType, TemplateActionsPropType } from '../../../../types';
-import FontProvider from '../../../font/fontProvider';
 import { TemplateGridView, EmptyContentMessage } from '../../shared';
 
 function Content({

@@ -21,11 +21,11 @@ import PropTypes from 'prop-types';
 import { useMemo } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
+import { BEZIER } from '@web-stories-wp/animation';
 
 /**
  * Internal dependencies
  */
-import { BEZIER } from '../../../animation/constants';
 import { themeHelpers } from '../../theme';
 
 export const LOADING_MESSAGE = __('Loading', 'web-stories');

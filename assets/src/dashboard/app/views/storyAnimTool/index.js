@@ -20,25 +20,23 @@
 import { useEffect, useState, useMemo, useCallback } from 'react';
 import { useFeatures } from 'flagged';
 import { v4 as uuidv4 } from 'uuid';
+import { UnitsProvider } from '@web-stories-wp/units';
+import { TransformProvider } from '@web-stories-wp/transform';
+import { clamp, STORY_ANIMATION_STATE } from '@web-stories-wp/animation';
+import { getDefinitionForType } from '@web-stories-wp/elements';
+import { FontProvider } from '@web-stories-wp/fonts';
+import { getStoryMarkup } from '@web-stories-wp/output';
+import { PreviewPage } from '@web-stories-wp/preview';
 
 /**
  * Internal dependencies
  */
-import { clamp, STORY_ANIMATION_STATE } from '../../../../animation';
-import { UnitsProvider } from '../../../../edit-story/units';
-import { TransformProvider } from '../../../../edit-story/components/transform';
-import stripHTML from '../../../../edit-story/utils/stripHTML';
-import VisibleImage from '../../../../edit-story/elements/media/visibleImage';
-import ShapeLayerContent from '../../../../edit-story/elements/shape/layer';
-import getStoryMarkup from '../../../../edit-story/output/utils/getStoryMarkup';
 import {
   SORT_DIRECTION,
   STORY_SORT_OPTIONS,
   STORY_STATUS,
 } from '../../../constants';
-import { PreviewPage } from '../../../../edit-story/components/previewPage';
 import { getPagePreviewHeights } from '../../../utils';
-import FontProvider from '../../font/fontProvider';
 import useApi from '../../api/useApi';
 import UpdateTemplateForm from './updateTemplateForm';
 import Timeline from './timeline';
@@ -50,7 +48,6 @@ import {
   ElementsContainer,
   ElementInfo,
   Type,
-  Text,
   STORY_WIDTH,
 } from './components';
 import { emitter } from './emitter';
@@ -295,22 +292,8 @@ function StoryAnimTool() {
   const { fullBleedHeight, storyHeight } = getPagePreviewHeights(STORY_WIDTH);
 
   const renderElementContent = useCallback((element) => {
-    switch (element.type) {
-      case 'image':
-        return (
-          <VisibleImage
-            src={element.resource.src}
-            alt={element.resource.alt}
-            height="50"
-          />
-        );
-      case 'text':
-        return <Text>{stripHTML(element.content)}</Text>;
-      case 'shape':
-        return <ShapeLayerContent element={element} />;
-      default:
-        return null;
-    }
+    const { AnimationLayer } = getDefinitionForType(element);
+    return <AnimationLayer element={element} />;
   }, []);
 
   return (

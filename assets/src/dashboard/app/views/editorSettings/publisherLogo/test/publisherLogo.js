@@ -22,11 +22,11 @@ import { within } from '@testing-library/react';
 /**
  * Internal dependencies
  */
+import { noop } from '@web-stories-wp/design-system';
 import { renderWithProviders } from '../../../../../testUtils';
 
 import PublisherLogoSettings, { TEXT } from '..';
 import formattedPublisherLogos from '../../../../../dataUtils/formattedPublisherLogos';
-import { noop } from '../../../../../../design-system';
 
 describe('PublisherLogo', () => {
   const mockHandleAddLogos = jest.fn();

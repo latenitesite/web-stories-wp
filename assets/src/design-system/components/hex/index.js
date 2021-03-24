@@ -19,15 +19,14 @@
  */
 import { forwardRef, useCallback, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import { getHexFromValue, getPreviewText } from '@web-stories-wp/patterns';
+import { parseToRgb } from 'polished';
+import { useKeyDownEffect } from '@web-stories-wp/keyboard';
 
 /**
  * Internal dependencies
  */
-import { parseToRgb } from 'polished';
-import { Input, useKeyDownEffect } from '../';
-import { InputPropTypes } from '../input';
-import getHexFromValue from './getHexFromValue';
-import getPreviewText from './getPreviewText';
+import { Input, InputPropTypes } from '../input';
 
 export const HexInput = forwardRef(function Hex(
   { value, placeholder, onChange, ...rest },

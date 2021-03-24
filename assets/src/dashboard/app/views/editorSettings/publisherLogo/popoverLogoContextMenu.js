@@ -24,14 +24,14 @@ import { __, sprintf } from '@web-stories-wp/i18n';
 /**
  * Internal dependencies
  */
-import { EditPencil as EditPencilIcon } from '../../../../icons';
-import { MenuContainer, LogoMenuButton } from '../components';
 import {
   AnimatedContextMenu,
   MenuItemProps,
   noop,
   useFocusOut,
-} from '../../../../../design-system';
+} from '@web-stories-wp/design-system';
+import { EditPencil as EditPencilIcon } from '../../../../icons';
+import { MenuContainer, LogoMenuButton } from '../components';
 
 function PopoverLogoContextMenu({
   isActive,

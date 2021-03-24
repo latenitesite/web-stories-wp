@@ -13,33 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/*
- * Copyright 2020 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
 /**
- * Internal dependencies
+ * External dependencies
  */
 import {
-  FULLBLEED_RATIO,
-  PAGE_HEIGHT,
+  getBox,
+  FULLBLEED_HEIGHT,
   PAGE_WIDTH,
-} from '../../edit-story/constants';
-import getMediaSizePositionProps from '../../edit-story/elements/media/getMediaSizePositionProps';
-import { getBox } from '../../edit-story/units/dimensions';
+  PAGE_HEIGHT,
+} from '@web-stories-wp/units';
+import { getMediaSizePositionProps } from '@web-stories-wp/media';
 
-const FULLBLEED_PAGE_HEIGHT = (1 / FULLBLEED_RATIO) * PAGE_WIDTH;
 const PRECISION = 1;
 
 export function getMediaBoundOffsets({ element }) {
@@ -62,8 +47,7 @@ export function getMediaBoundOffsets({ element }) {
     left: (media.offsetX / media.width) * 100,
     bottom:
       -1 *
-      ((media.height - (media.offsetY + FULLBLEED_PAGE_HEIGHT)) /
-        media.height) *
+      ((media.height - (media.offsetY + FULLBLEED_HEIGHT)) / media.height) *
       100,
   };
 }

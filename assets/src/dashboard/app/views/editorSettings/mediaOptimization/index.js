@@ -25,13 +25,13 @@ import { __ } from '@web-stories-wp/i18n';
 /**
  * Internal dependencies
  */
+import { Checkbox, THEME_CONSTANTS } from '@web-stories-wp/design-system';
 import {
   SettingForm,
   SettingHeading,
   CheckboxLabel,
   CheckboxLabelText,
 } from '../components';
-import { Checkbox, THEME_CONSTANTS } from '../../../../../design-system';
 
 export default function MediaOptimizationSettings({
   selected,

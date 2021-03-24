@@ -17,13 +17,12 @@
  * External dependencies
  */
 import PropTypes from 'prop-types';
+import { PAGE_HEIGHT, PAGE_WIDTH } from '@web-stories-wp/units';
+import { AMPBoilerplate } from '@web-stories-wp/react-amp';
 
 /**
  * Internal dependencies
  */
-import { PAGE_HEIGHT, PAGE_WIDTH } from '../../edit-story/constants';
-import Boilerplate from '../../edit-story/output/utils/ampBoilerplate';
-import CustomCSS from '../../edit-story/output/utils/styles';
 import { useStoryAnimationContext } from '../components';
 
 export const AMP_STORY_ASPECT_RATIO = `${PAGE_WIDTH}:${PAGE_HEIGHT}`;
@@ -31,8 +30,7 @@ export const AMP_STORY_ASPECT_RATIO = `${PAGE_WIDTH}:${PAGE_HEIGHT}`;
 export function AMPStoryWrapper({ children }) {
   return (
     <div style={{ width: '100%', height: '640px' }}>
-      <Boilerplate />
-      <CustomCSS />
+      <AMPBoilerplate />
       <amp-story
         standalone
         title="My Story"

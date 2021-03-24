@@ -20,16 +20,16 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { __, sprintf } from '@web-stories-wp/i18n';
+import { useGridViewKeys } from '@web-stories-wp/keyboard';
+import { UnitsProvider } from '@web-stories-wp/units';
+import { STORY_ANIMATION_STATE } from '@web-stories-wp/animation';
+import { PreviewPage } from '@web-stories-wp/preview';
 
 /**
  * Internal dependencies
  */
-import { STORY_ANIMATION_STATE } from '../../../animation';
-import { UnitsProvider } from '../../../edit-story/units';
 import { StoryPropType } from '../../types';
 import { getPagePreviewHeights } from '../../utils';
-import { useGridViewKeys } from '../../../design-system';
-import { PreviewPage } from '../../../edit-story/components/previewPage';
 import {
   ActiveCard,
   GalleryContainer,

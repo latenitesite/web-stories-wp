@@ -20,18 +20,18 @@
 import { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useFeature } from 'flagged';
+import { clamp } from '@web-stories-wp/animation';
+import { PageSizePropType } from '@web-stories-wp/preview';
 
 /**
  * Internal dependencies
  */
-import { clamp } from '../../animation';
 import {
   TEMPLATES_GALLERY_SORT_OPTIONS,
   TEMPLATES_GALLERY_STATUS,
   VIEW_STYLE,
 } from '../constants';
-import { PageSizePropType } from '../types';
-import { usePagePreviewSize } from './index';
+import usePagePreviewSize from './usePagePreviewSize';
 
 export default function useTemplateView({ totalPages }) {
   const enableTemplatePreviews = useFeature('enableTemplatePreviews');

@@ -22,7 +22,7 @@ import styled from 'styled-components';
 /**
  * Internal dependencies
  */
-import MultiPartPill from '../';
+import MultiPartPill from '..';
 import Button from '../../button';
 import { LeftArrow, RightArrow } from '../../../icons';
 import { BUTTON_TYPES } from '../../../constants';

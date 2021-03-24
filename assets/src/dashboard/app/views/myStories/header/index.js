@@ -19,14 +19,14 @@
  */
 import { useMemo, memo, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { useDebouncedCallback } from 'use-debounce';
+import { useDebouncedCallback } from '@web-stories-wp/react';
 import { __, sprintf } from '@web-stories-wp/i18n';
 import { trackEvent } from '@web-stories-wp/tracking';
 import styled from 'styled-components';
 /**
  * Internal dependencies
  */
-import { Pill } from '../../../../../design-system';
+import { Pill } from '@web-stories-wp/design-system';
 import { useLayoutContext } from '../../../../components';
 import {
   DASHBOARD_VIEWS,

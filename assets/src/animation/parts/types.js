@@ -51,3 +51,5 @@ export const AnimationProps = {
   targets: PropTypes.arrayOf(PropTypes.string),
   ...GeneralAnimationPropTypes,
 };
+
+export const AnimationPropType = PropTypes.shape(AnimationProps);

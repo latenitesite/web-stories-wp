@@ -22,6 +22,9 @@ import { useRef, useEffect, useState, useCallback } from 'react';
 import { getRelativeDisplayDate } from '@web-stories-wp/date';
 import { __, sprintf } from '@web-stories-wp/i18n';
 import { trackEvent } from '@web-stories-wp/tracking';
+import { useGridViewKeys } from '@web-stories-wp/keyboard';
+import { useFocusOut } from '@web-stories-wp/design-system';
+import { PageSizePropType } from '@web-stories-wp/preview';
 
 /**
  * Internal dependencies
@@ -37,12 +40,10 @@ import {
 } from '../../../components';
 import {
   StoryMenuPropType,
-  PageSizePropType,
   TemplatesPropType,
   TemplateActionsPropType,
 } from '../../../types';
 import { PAGE_WRAPPER, STORY_STATUS } from '../../../constants';
-import { useGridViewKeys, useFocusOut } from '../../../../design-system';
 import { useConfig } from '../../config';
 import { generateStoryMenu } from '../../../components/popoverMenu/story-menu-generator';
 

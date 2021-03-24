@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import styled, { ThemeProvider } from 'styled-components';
  * Internal dependencies
  */
 import { theme, THEME_CONSTANTS } from '../../../theme';
-import { MediaInput as DefaultMediaInput } from '../index';
+import { MediaInput as DefaultMediaInput } from '..';
 import { shortDropDownOptions } from '../../../storybookUtils/sampleData';
 import { MEDIA_VARIANTS } from '../constants';
 import { Headline } from '../../typography/headline';

@@ -19,6 +19,7 @@
  */
 import { useCallback, useState, useEffect, useRef } from 'react';
 import { enableTracking, disableTracking } from '@web-stories-wp/tracking';
+import { localStore } from '@web-stories-wp/design-system';
 
 /**
  * Internal dependencies
@@ -26,7 +27,6 @@ import { enableTracking, disableTracking } from '@web-stories-wp/tracking';
 import useApi from '../../api/useApi';
 import { useRouteHistory } from '../../router';
 import { APP_ROUTES } from '../../../constants';
-import localStore from '../../../../edit-story/utils/localStore';
 
 // The value associated with this key indicates if the user has interacted with
 // the banner previously. If they have, we do not show the banner again.

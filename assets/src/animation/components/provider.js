@@ -27,18 +27,17 @@ import {
   useState,
 } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { StoryElementPropType } from '@web-stories-wp/elements';
 import 'web-animations-js/web-animations-next-lite.min.js';
 
 /**
  * Internal dependencies
  */
-import StoryPropTypes from '../../edit-story/types';
-import { clamp } from '../../animation';
-import { createContext } from '../../design-system';
+import { clamp } from '../utils/range';
 import { AnimationPart } from '../parts';
 import { AnimationProps } from '../parts/types';
 
-const Context = createContext(null);
+import Context from './context';
 
 const WAAPIAnimationMachine = {
   idle: {
@@ -247,11 +246,10 @@ function Provider({
 
 Provider.propTypes = {
   animations: PropTypes.arrayOf(PropTypes.shape(AnimationProps)),
-  elements: PropTypes.arrayOf(StoryPropTypes.element),
+  elements: PropTypes.arrayOf(StoryElementPropType),
   children: PropTypes.node.isRequired,
   onWAAPIFinish: PropTypes.func,
   selectedElementIds: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default Provider;
-export { Context as StoryAnimationContext };

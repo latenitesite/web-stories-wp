@@ -20,11 +20,12 @@ import PropTypes from 'prop-types';
 import { useCallback, useMemo, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
+import { useKeyDownEffect } from '@web-stories-wp/keyboard';
+
 /**
  * Internal dependencies
  */
 import { BUTTON_TRANSITION_TIMING } from '../button/constants';
-import { useKeyDownEffect } from '../keyboard';
 import { KEYS } from '../../utils/constants';
 import { MenuItem, MenuItemProps } from './menuItem';
 

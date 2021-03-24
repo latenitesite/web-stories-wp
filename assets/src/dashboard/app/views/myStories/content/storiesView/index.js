@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,9 +22,6 @@ import { useState, useCallback, useMemo, useEffect } from 'react';
 import { useFeature } from 'flagged';
 import { __, sprintf } from '@web-stories-wp/i18n';
 import { trackEvent } from '@web-stories-wp/tracking';
-/**
- * Internal dependencies
- */
 import {
   Dialog,
   Button,
@@ -32,7 +29,11 @@ import {
   BUTTON_SIZES,
   LoadingSpinner,
   useSnackbar,
-} from '../../../../../../design-system';
+} from '@web-stories-wp/design-system';
+
+/**
+ * Internal dependencies
+ */
 import { StoriesPropType, StoryActionsPropType } from '../../../../../types';
 import { titleFormatted } from '../../../../../utils';
 import {

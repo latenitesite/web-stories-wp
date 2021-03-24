@@ -24,7 +24,7 @@ import { fireEvent } from '@testing-library/react';
  */
 import { renderWithProviders } from '../../../../testUtils';
 import completeTemplateObject from '../../../../dataUtils/completeTemplateObject';
-import PreviewStory from '../';
+import PreviewStory from '..';
 
 function renderPreviewInContext({
   isLoading,

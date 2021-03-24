@@ -24,7 +24,7 @@ import styled from 'styled-components';
 /**
  * Internal dependencies
  */
-import PopoverMenu, { PopoverMenuCard } from '../';
+import PopoverMenu, { PopoverMenuCard } from '..';
 
 const demoItems = [
   { value: '1', label: 'one' },

@@ -15,9 +15,13 @@
  */
 
 /**
+ * External dependencies
+ */
+import { identity, useContextSelector } from '@web-stories-wp/react';
+
+/**
  * Internal dependencies
  */
-import { identity, useContextSelector } from '../..';
 import Context from './context';
 
 export function useSnackbar(selector) {

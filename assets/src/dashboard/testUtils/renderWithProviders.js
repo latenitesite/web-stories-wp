@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,15 +20,15 @@
 import { render } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { FlagsProvider } from 'flagged';
-
-/**
- * Internal dependencies
- */
 import {
   theme as externalDesignSystemTheme,
   lightMode,
   SnackbarProvider,
-} from '../../design-system';
+} from '@web-stories-wp/design-system';
+
+/**
+ * Internal dependencies
+ */
 import theme from '../theme';
 import { ConfigProvider } from '../app/config';
 import MockApiProvider from './mockApiProvider';

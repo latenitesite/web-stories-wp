@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,17 @@
  */
 
 /**
+ * External dependencies
+ */
+import { SnackbarProvider } from '@web-stories-wp/design-system';
+
+/**
  * Internal dependencies
  */
 import { renderWithProviders } from '../../../../../testUtils';
-
 import { VIEW_STYLE, STORY_STATUSES } from '../../../../../constants';
 import LayoutProvider from '../../../../../components/layout/provider';
-import { SnackbarProvider } from '../../../../../../design-system';
-import Content from '../';
+import Content from '..';
 
 const fakeStories = [
   {

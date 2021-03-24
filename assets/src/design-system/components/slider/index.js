@@ -20,11 +20,11 @@
 import styled, { css } from 'styled-components';
 import { useRef, useCallback, useLayoutEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useKeyDownEffect } from '@web-stories-wp/keyboard';
 
 /**
  * Internal dependencies
  */
-import { useKeyDownEffect } from '../keyboard';
 import { Tooltip } from '../tooltip';
 import { PLACEMENT } from '../popup';
 

@@ -22,9 +22,8 @@ import { act, renderHook } from '@testing-library/react-hooks';
  * Internal dependencies
  */
 import useCategoriesApi from '../useCategoriesApi';
-import wpAdapter from '../wpAdapter';
 
-jest.mock('../wpAdapter', () => ({
+const dataAdapter = () => ({
   get: () =>
     Promise.resolve({
       headers: {
@@ -42,12 +41,12 @@ jest.mock('../wpAdapter', () => ({
           },
         ]),
     }),
-}));
+});
 
 describe('useCategoryApi', () => {
   it('should return categories in state data when the API request is fired', async () => {
     const { result } = renderHook(() =>
-      useCategoriesApi(wpAdapter, { categoryApi: 'categories' })
+      useCategoriesApi(dataAdapter, { categoryApi: 'categories' })
     );
 
     await act(async () => {

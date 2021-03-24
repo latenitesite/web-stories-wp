@@ -18,17 +18,17 @@
  * External dependencies
  */
 import { action } from '@storybook/addon-actions';
+import { TransformProvider } from '@web-stories-wp/transform';
+import { FontProvider } from '@web-stories-wp/fonts';
 
 /**
  * Internal dependencies
  */
-import { TransformProvider } from '../../../../../../../edit-story/components/transform';
 import {
   formattedTemplatesArray,
   STORYBOOK_PAGE_SIZE,
 } from '../../../../../../storybookUtils';
-import FontProvider from '../../../../../font/fontProvider';
-import RelatedGrid from '../';
+import RelatedGrid from '..';
 
 export default {
   title: 'Dashboard/Views/TemplateDetails/Content/RelatedGrid',

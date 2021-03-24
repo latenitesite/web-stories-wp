@@ -24,7 +24,7 @@ import styled from 'styled-components';
 /**
  * Internal dependencies
  */
-import Button from '../';
+import Button from '..';
 import { BUTTON_TYPES } from '../../../constants';
 
 export default {

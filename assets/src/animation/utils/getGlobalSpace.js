@@ -15,7 +15,7 @@
  */
 
 /**
- * @typedef {import('../../edit-story/types').Element} Element
+ * @typedef {import('@web-stories-wp/elements').Element} Element
  */
 
 /**

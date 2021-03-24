@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,14 +22,7 @@ import { useCallback, useLayoutEffect, useMemo, useRef } from 'react';
 import { useFeature } from 'flagged';
 import { __, sprintf } from '@web-stories-wp/i18n';
 import { trackClick, trackEvent } from '@web-stories-wp/tracking';
-
-/**
- * Internal dependencies
- */
-import { BEZIER } from '../../../animation';
-import { useConfig } from '../../app/config';
-import { resolveRoute, useRouteHistory } from '../../app/router';
-import { PRIMARY_PATHS, SECONDARY_PATHS, Z_INDEX } from '../../constants';
+import { BEZIER } from '@web-stories-wp/animation';
 import {
   Button,
   BUTTON_SIZES,
@@ -37,7 +30,14 @@ import {
   LogoWithTypeCircleColor,
   Text,
   THEME_CONSTANTS,
-} from '../../../design-system';
+} from '@web-stories-wp/design-system';
+
+/**
+ * Internal dependencies
+ */
+import { useConfig } from '../../app/config';
+import { resolveRoute, useRouteHistory } from '../../app/router';
+import { PRIMARY_PATHS, SECONDARY_PATHS, Z_INDEX } from '../../constants';
 import {
   DASHBOARD_LEFT_NAV_WIDTH,
   MIN_DASHBOARD_WIDTH,

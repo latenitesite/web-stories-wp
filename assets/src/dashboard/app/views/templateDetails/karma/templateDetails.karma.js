@@ -18,11 +18,11 @@
  */
 import { within } from '@testing-library/react';
 import qs from 'query-string';
+import { stripHTML } from '@web-stories-wp/design-system';
 
 /**
  * Internal dependencies
  */
-import stripHTML from '../../../../../edit-story/utils/stripHTML';
 import Fixture from '../../../../karma/fixture';
 import {
   TEMPLATES_GALLERY_ITEM_CENTER_ACTION_LABELS,

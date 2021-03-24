@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,12 @@
  * External dependencies
  */
 import { useEffect, useMemo, useState, useRef } from 'react';
-import { useDebouncedCallback } from 'use-debounce';
+import { useDebouncedCallback } from '@web-stories-wp/react';
+import { useResizeEffect } from '@web-stories-wp/design-system';
 
 /**
  * Internal dependencies
  */
-import { useResizeEffect } from '../../design-system';
 import {
   DASHBOARD_LEFT_NAV_WIDTH,
   FULLBLEED_RATIO,

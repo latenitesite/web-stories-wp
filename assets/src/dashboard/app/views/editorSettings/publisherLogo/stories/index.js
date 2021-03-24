@@ -20,13 +20,22 @@
 import { useState, useCallback } from 'react';
 import { boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { createBlob, getFileName } from '@web-stories-wp/media';
 
 /**
  * Internal dependencies
  */
 import formattedPublisherLogos from '../../../../../dataUtils/formattedPublisherLogos';
-import { getResourceFromLocalFile } from '../../../../../utils';
-import PublisherLogoSettings from '../';
+import PublisherLogoSettings from '..';
+
+const createFileReader = (file) => {
+  const reader = new window.FileReader();
+  return new Promise((resolve, reject) => {
+    reader.onload = () => resolve(reader);
+    reader.onerror = reject;
+    reader.readAsArrayBuffer(file);
+  });
+};
 
 export default {
   title: 'Dashboard/Views/EditorSettings/PublisherLogo',
@@ -42,22 +51,21 @@ export const _default = () => {
     action('onSubmit fired')(newPublisherLogos);
 
     // this is purely for the sake of storybook demoing
-    const resources = await Promise.all(
-      newPublisherLogos.map(async (file) => ({
-        localResource: await getResourceFromLocalFile(file),
-        file,
-      }))
+    const newUploads = await Promise.all(
+      newPublisherLogos.map(async (file) => {
+        const reader = await createFileReader(file);
+        const src = createBlob(
+          new window.Blob([reader.result], { type: file.type })
+        );
+        return {
+          src,
+          title: file.name,
+          alt: getFileName(file.name),
+        };
+      })
     );
 
     setUploadedContent((existingUploads) => {
-      const newUploads = resources.map(({ file, localResource }) => {
-        return {
-          src: localResource.src,
-          title: file.name,
-          alt: localResource.alt,
-        };
-      });
-
       return [...existingUploads, ...newUploads];
     });
   }, []);

@@ -17,13 +17,13 @@
  * External dependencies
  */
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useKeyDownEffect } from '@web-stories-wp/keyboard';
 
 /**
  * Internal dependencies
  */
 import useFocusOut from '../../utils/useFocusOut';
 import isNullOrUndefinedOrEmptyString from '../../utils/isNullOrUndefinedOrEmptyString';
-import { useKeyDownEffect } from '../keyboard';
 import {
   KEYS,
   KEYS_CLOSE_MENU,

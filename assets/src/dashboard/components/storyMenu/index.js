@@ -25,11 +25,14 @@ import { rgba } from 'polished';
 /**
  * Internal dependencies
  */
+import {
+  AnimatedContextMenu,
+  MenuItemProps,
+} from '@web-stories-wp/design-system';
 import { StoryPropType } from '../../types';
 import { MoreVertical as MoreVerticalSvg } from '../../icons';
 import useFocusOut from '../../utils/useFocusOut';
 import { KEYBOARD_USER_SELECTOR } from '../../constants';
-import { AnimatedContextMenu, MenuItemProps } from '../../../design-system';
 
 export const MoreVerticalButton = styled.button`
   display: flex;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,21 +19,22 @@
  */
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { trackEvent } from '@web-stories-wp/tracking';
+import { clamp } from '@web-stories-wp/animation';
+import { TransformProvider } from '@web-stories-wp/transform';
+import { FontProvider } from '@web-stories-wp/fonts';
+import { useSnackbar } from '@web-stories-wp/design-system';
+
 /**
  * Internal dependencies
  */
-import { clamp } from '../../../../animation';
-import { TransformProvider } from '../../../../edit-story/components/transform';
 import { Layout } from '../../../components';
-import { useTemplateView, usePagePreviewSize } from '../../../utils/';
+import { useTemplateView, usePagePreviewSize } from '../../../utils';
 import useApi from '../../api/useApi';
 import { useConfig } from '../../config';
-import FontProvider from '../../font/fontProvider';
-import { useSnackbar } from '../../../../design-system';
 import { resolveRelatedTemplateRoute } from '../../router';
 import useRouteHistory from '../../router/useRouteHistory';
 import { ERRORS } from '../../textContent';
-import { PreviewStoryView } from '..';
+import PreviewStoryView from '../previewStory';
 import Header from './header';
 import Content from './content';
 

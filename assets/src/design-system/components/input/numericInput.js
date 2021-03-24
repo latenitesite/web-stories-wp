@@ -17,10 +17,11 @@
  * External dependencies
  */
 import PropTypes from 'prop-types';
+import { useKeyDownEffect } from '@web-stories-wp/keyboard';
+
 /**
  * Internal dependencies
  */
-import { useKeyDownEffect } from '../keyboard';
 import { useNumericInput } from './useNumericInput';
 import { Input, InputPropTypes } from '.';
 

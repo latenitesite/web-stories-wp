@@ -22,17 +22,18 @@ import { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { __, sprintf } from '@web-stories-wp/i18n';
 import { trackEvent } from '@web-stories-wp/tracking';
+import { UnitsProvider } from '@web-stories-wp/units';
+import { TransformProvider } from '@web-stories-wp/transform';
+import { FontProvider } from '@web-stories-wp/fonts';
 
 /**
  * Internal dependencies
  */
-import { TransformProvider } from '../../../../../edit-story/components/transform';
-import { UnitsProvider } from '../../../../../edit-story/units';
 import {
   Headline,
   LoadingSpinner,
   THEME_CONSTANTS,
-} from '../../../../../design-system';
+} from '@web-stories-wp/design-system';
 import {
   Layout,
   LoadingContainer,
@@ -46,7 +47,6 @@ import {
 } from '../../../../constants';
 import { TemplateActionsPropType, TemplatesPropType } from '../../../../types';
 import { PagePropTypes, ViewPropTypes } from '../../../../utils/useStoryView';
-import FontProvider from '../../../font/fontProvider';
 import { SavedTemplateGridView, EmptyContentMessage } from '../../shared';
 
 function Content({

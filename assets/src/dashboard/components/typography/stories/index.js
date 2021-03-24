@@ -23,7 +23,7 @@ import {
   Paragraph1,
   Paragraph2,
   DefaultParagraph1,
-} from '../';
+} from '..';
 
 export default {
   title: 'Dashboard/Components/Typography',

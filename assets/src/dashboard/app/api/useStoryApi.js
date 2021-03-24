@@ -22,11 +22,11 @@ import queryString from 'query-string';
 import { useFeatures } from 'flagged';
 import { __, sprintf } from '@web-stories-wp/i18n';
 import { getTimeTracker } from '@web-stories-wp/tracking';
+import { base64Encode, addQueryArgs } from '@web-stories-wp/design-system';
 
 /**
  * Internal dependencies
  */
-import base64Encode from '../../../edit-story/utils/base64Encode';
 import {
   STORY_STATUSES,
   STORY_SORT_OPTIONS,
@@ -38,7 +38,6 @@ import storyReducer, {
   defaultStoriesState,
   ACTION_TYPES as STORY_ACTION_TYPES,
 } from '../reducer/stories';
-import { addQueryArgs } from '../../../design-system';
 import { reshapeStoryObject, reshapeStoryPreview } from '../serializers';
 import { ERRORS } from '../textContent';
 
@@ -244,8 +243,8 @@ const useStoryApi = (dataAdapter, { editStoryURL, storyApi, encodeMarkup }) => {
           status,
         } = dashboardStory;
 
-        const getStoryPropsToSave = await import(
-          /* webpackChunkName: "chunk-getStoryPropsToSave" */ '../../../edit-story/app/story/utils/getStoryPropsToSave'
+        const { getStoryPropsToSave } = await import(
+          /* webpackChunkName: "chunk-getStoryPropsToSave" */ '@web-stories-wp/output'
         );
         const storyProps = await getStoryPropsToSave.default({
           story: {
@@ -275,8 +274,8 @@ const useStoryApi = (dataAdapter, { editStoryURL, storyApi, encodeMarkup }) => {
 
         const preppedStoryProps = reshapeStoryPreview(storyProps);
 
-        const getStoryMarkup = await import(
-          /* webpackChunkName: "chunk-getStoryMarkup" */ '../../../edit-story/output/utils/getStoryMarkup'
+        const { getStoryMarkup } = await import(
+          /* webpackChunkName: "chunk-getStoryMarkup" */ '@web-stories-wp/output'
         );
 
         const markup = await getStoryMarkup.default(
@@ -314,8 +313,8 @@ const useStoryApi = (dataAdapter, { editStoryURL, storyApi, encodeMarkup }) => {
 
       try {
         const { createdBy, pages, version } = template;
-        const getStoryPropsToSave = await import(
-          /* webpackChunkName: "chunk-getStoryPropsToSave" */ '../../../edit-story/app/story/utils/getStoryPropsToSave'
+        const { getStoryPropsToSave } = await import(
+          /* webpackChunkName: "chunk-getStoryPropsToSave" */ '@web-stories-wp/output'
         );
         const storyPropsToSave = await getStoryPropsToSave.default({
           story: {

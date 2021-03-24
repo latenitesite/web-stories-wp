@@ -15,17 +15,18 @@
  */
 
 /**
- * Internal dependencies
+ * External dependencies
  */
 import {
-  FULLBLEED_RATIO,
   PAGE_HEIGHT,
   PAGE_WIDTH,
-} from '../../../edit-story/constants';
-import getOffPageOffset from '../getOffPageOffset';
+  DANGER_ZONE_HEIGHT,
+} from '@web-stories-wp/units';
 
-const FULLBLEED_HEIGHT = PAGE_WIDTH / FULLBLEED_RATIO;
-const DANGER_ZONE_HEIGHT = (FULLBLEED_HEIGHT - PAGE_HEIGHT) / 2;
+/**
+ * Internal dependencies
+ */
+import getOffPageOffset from '../getOffPageOffset';
 
 describe('getOffPageOffset', () => {
   const element = {

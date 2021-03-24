@@ -17,7 +17,7 @@
  * External dependencies
  */
 import { useMemo, useState } from 'react';
-import { useDebouncedCallback } from 'use-debounce';
+import { useDebouncedCallback } from '@web-stories-wp/react';
 
 /**
  * Internal dependencies

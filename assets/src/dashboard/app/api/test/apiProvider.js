@@ -26,7 +26,7 @@ import ApiProvider from '../apiProvider';
 import { ConfigProvider } from '../../config';
 import useApi from '../useApi';
 
-jest.mock('../wpAdapter', () => ({
+const dataAdapter = () => ({
   get: () =>
     Promise.resolve({
       headers: {
@@ -88,7 +88,7 @@ jest.mock('../wpAdapter', () => ({
       preview_link: 'https://www.story-link.com/?preview=true',
     });
   },
-}));
+});
 
 describe('ApiProvider', () => {
   it('should return a story in state data when the API request is fired', async () => {
@@ -98,7 +98,7 @@ describe('ApiProvider', () => {
         <ConfigProvider
           config={{ api: { stories: 'stories' }, editStoryURL: 'editStory' }}
         >
-          <ApiProvider {...props} />
+          <ApiProvider {...props} dataAdapter={dataAdapter} />
         </ConfigProvider>
       ),
     });

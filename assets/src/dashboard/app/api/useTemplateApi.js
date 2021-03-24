@@ -24,7 +24,7 @@ import getAllTemplates from '@web-stories-wp/templates';
 /**
  * Internal dependencies
  */
-import base64Encode from '../../../edit-story/utils/base64Encode';
+import { base64Encode } from '@web-stories-wp/design-system';
 
 import { APP_ROUTES } from '../../constants';
 import templateReducer, {

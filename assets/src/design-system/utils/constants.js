@@ -20,3 +20,12 @@ export const KEYS = {
   RIGHT: 'ArrowRight',
   UP: 'ArrowUp',
 };
+
+export const LOCAL_STORAGE_PREFIX = {
+  PANEL: 'web_stories_ui_panel_settings',
+  TEXT_SET_SETTINGS: 'web_stores_text_set_settings',
+  TERMS_MEDIA3P: 'web_stories_media3p_terms_agreement',
+  VIDEO_OPTIMIZATION_DIALOG_DISMISSED:
+    'web_stories_video_optimization_dialog_dismissed',
+  HELP_CENTER: 'web_stories_help_center',
+};

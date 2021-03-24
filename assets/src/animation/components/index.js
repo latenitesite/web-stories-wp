@@ -32,3 +32,4 @@ export const StoryAnimation = {
 };
 
 export { default as useStoryAnimationContext } from './useStoryAnimationContext';
+export { default as StoryAnimationContext } from './context';

@@ -18,14 +18,15 @@
  * External dependencies
  */
 import { fireEvent } from '@testing-library/react';
+import { PreviewPage } from '@web-stories-wp/preview';
 
 /**
  * Internal dependencies
  */
-jest.mock('../../../../edit-story/components/previewPage/previewPage');
-import { PreviewPage } from '../../../../edit-story/components/previewPage';
-import { renderWithProviders } from '../../../testUtils/';
-import CardGallery from '../';
+import { renderWithProviders } from '../../../testUtils';
+import CardGallery from '..';
+
+jest.mock('@web-stories-wp/preview');
 
 const createMockTemplate = (pages) => ({
   id: 1,

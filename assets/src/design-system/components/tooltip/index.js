@@ -20,12 +20,12 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useState, useRef, useMemo, useCallback } from 'react';
+import { prettifyShortcut } from '@web-stories-wp/keyboard';
 
 /**
  * Internal dependencies
  */
 import { Popup, PLACEMENT } from '../popup';
-import { prettifyShortcut } from '../keyboard';
 import { THEME_CONSTANTS } from '../../theme';
 import { Text } from '../typography';
 import { SvgForTail, Tail, SVG_TOOLTIP_TAIL_ID } from './tail';

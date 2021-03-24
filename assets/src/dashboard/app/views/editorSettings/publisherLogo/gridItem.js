@@ -23,13 +23,13 @@ import { __, sprintf } from '@web-stories-wp/i18n';
 /**
  * Internal dependencies
  */
+import { THEME_CONSTANTS } from '@web-stories-wp/design-system';
 import {
   CenterMutedText,
   GridItemButton,
   GridItemContainer,
   Logo,
 } from '../components';
-import { THEME_CONSTANTS } from '../../../../../design-system';
 import PopoverLogoContextMenu, {
   PopoverLogoContextMenuPropTypes,
 } from './popoverLogoContextMenu';

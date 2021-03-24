@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /**
- * Internal dependencies
+ * External dependencies
  */
-import { createContext } from '../../../design-system';
+import { createContext } from '@web-stories-wp/react';
 
 export default createContext({ api: {} });

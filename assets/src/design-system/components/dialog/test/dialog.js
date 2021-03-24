@@ -23,7 +23,7 @@ import { fireEvent } from '@testing-library/react';
  * Internal dependencies
  */
 import { renderWithProviders } from '../../../testUtils/renderWithProviders';
-import { Dialog } from '../';
+import { Dialog } from '..';
 
 describe('DesignSystem/Components/Dialog', () => {
   it('should not render a dialog by default', () => {

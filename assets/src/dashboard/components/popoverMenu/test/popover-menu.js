@@ -22,8 +22,8 @@ import { fireEvent } from '@testing-library/react';
 /**
  * Internal dependencies
  */
-import { renderWithProviders } from '../../../testUtils/';
-import PopoverMenu from '../';
+import { renderWithProviders } from '../../../testUtils';
+import PopoverMenu from '..';
 
 describe('PopoverMenu', () => {
   const demoItems = [

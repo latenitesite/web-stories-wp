@@ -19,13 +19,14 @@
  */
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
+import { TransformProvider } from '@web-stories-wp/transform';
+import { FontProvider } from '@web-stories-wp/fonts';
+
 /**
  * Internal dependencies
  */
-import { TransformProvider } from '../../../../../../../edit-story/components/transform';
 import { formattedTemplatesArray } from '../../../../../../storybookUtils';
-import FontProvider from '../../../../../font/fontProvider';
-import DetailsGallery from '../';
+import DetailsGallery from '..';
 
 export default {
   title: 'Dashboard/Views/TemplateDetails/Content/DetailsGallery',

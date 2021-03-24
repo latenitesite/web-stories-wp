@@ -20,6 +20,7 @@
 import { action } from '@storybook/addon-actions';
 import styled from 'styled-components';
 import { FlagsProvider } from 'flagged';
+import { SnackbarProvider } from '@web-stories-wp/design-system';
 
 /**
  * Internal dependencies
@@ -36,8 +37,7 @@ import {
   STORYBOOK_PAGE_SIZE,
 } from '../../../../../storybookUtils';
 import { usePagePreviewSize } from '../../../../../utils';
-import { SnackbarProvider } from '../../../../../../design-system';
-import Content from '../';
+import Content from '..';
 import StoriesView from '../storiesView';
 
 export default {

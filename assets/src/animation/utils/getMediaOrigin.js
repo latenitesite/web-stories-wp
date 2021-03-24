@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 /**
  * Internal dependencies
  */
-import { lerp } from '../utils';
+import { lerp } from './range';
 
 /**
  * Given a media element, calculates where the origin is on the media

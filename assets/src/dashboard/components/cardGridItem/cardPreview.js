@@ -20,25 +20,26 @@
 import PropTypes from 'prop-types';
 import { useEffect, useReducer, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-
-/**
- * Internal dependencies
- */
+import { clamp, STORY_ANIMATION_STATE } from '@web-stories-wp/animation';
 import {
   themeHelpers,
   Button,
   BUTTON_TYPES,
   BUTTON_SIZES,
   ThemeGlobals,
-} from '../../../design-system';
+} from '@web-stories-wp/design-system';
 import {
   PreviewErrorBoundary,
   PreviewPage,
-} from '../../../edit-story/components/previewPage';
-import { clamp, STORY_ANIMATION_STATE } from '../../../animation';
+  PageSizePropType,
+} from '@web-stories-wp/preview';
+
+/**
+ * Internal dependencies
+ */
 import { resolveRoute } from '../../app/router';
 import { DEFAULT_STORY_PAGE_ADVANCE_DURATION } from '../../constants';
-import { PageSizePropType, StoryPropType } from '../../types';
+import { StoryPropType } from '../../types';
 import { useFocusOut } from '../../utils';
 import { ActionLabel } from './types';
 

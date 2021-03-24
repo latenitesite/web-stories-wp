@@ -25,6 +25,11 @@ import { trackClick } from '@web-stories-wp/tracking';
 /**
  * Internal dependencies
  */
+import {
+  BUTTON_SIZES,
+  BUTTON_TYPES,
+  THEME_CONSTANTS,
+} from '@web-stories-wp/design-system';
 import { validateGoogleAnalyticsIdFormat } from '../../../../utils';
 import {
   InlineForm,
@@ -37,11 +42,6 @@ import {
   TextInputHelperText,
   VisuallyHiddenLabel,
 } from '../components';
-import {
-  BUTTON_SIZES,
-  BUTTON_TYPES,
-  THEME_CONSTANTS,
-} from '../../../../../design-system';
 
 export const TEXT = {
   CONTEXT: __(

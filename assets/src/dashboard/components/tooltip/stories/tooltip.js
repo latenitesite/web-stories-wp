@@ -22,7 +22,7 @@ import { text, select } from '@storybook/addon-knobs';
  * Internal dependencies
  */
 import styled from 'styled-components';
-import Tooltip from '../';
+import Tooltip from '..';
 
 const Container = styled.div`
   display: flex;

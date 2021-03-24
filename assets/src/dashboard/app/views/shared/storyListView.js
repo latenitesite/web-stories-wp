@@ -22,6 +22,19 @@ import PropTypes from 'prop-types';
 import { useCallback } from 'react';
 import { getRelativeDisplayDate } from '@web-stories-wp/date';
 import { __ } from '@web-stories-wp/i18n';
+import {
+  Headline,
+  Icons,
+  Text,
+  THEME_CONSTANTS,
+  themeHelpers,
+} from '@web-stories-wp/design-system';
+import {
+  PreviewPage,
+  PreviewErrorBoundary,
+  PageSizePropType,
+} from '@web-stories-wp/preview';
+
 /**
  * Internal dependencies
  */
@@ -29,7 +42,6 @@ import {
   StoriesPropType,
   RenameStoryPropType,
   StoryMenuPropType,
-  PageSizePropType,
 } from '../../../types';
 import {
   Table,
@@ -57,19 +69,8 @@ import {
   STORY_PREVIEW_WIDTH,
   VIEWPORT_BREAKPOINT,
 } from '../../../constants';
-import {
-  PreviewPage,
-  PreviewErrorBoundary,
-} from '../../../../edit-story/components/previewPage';
 import { generateStoryMenu } from '../../../components/popoverMenu/story-menu-generator';
 import { titleFormatted } from '../../../utils';
-import {
-  Headline,
-  Icons,
-  Text,
-  THEME_CONSTANTS,
-} from '../../../../design-system';
-import { focusableOutlineCSS } from '../../../../design-system/theme/helpers';
 
 const ListView = styled.div`
   width: 100%;
@@ -129,7 +130,10 @@ const SelectableTitle = styled(HeavyTitle).attrs({ tabIndex: 0 })`
   cursor: pointer;
 
   ${({ theme }) =>
-    focusableOutlineCSS(theme.colors.border.focus, theme.colors.bg.secondary)};
+    themeHelpers.focusableOutlineCSS(
+      theme.colors.border.focus,
+      theme.colors.bg.secondary
+    )};
 `;
 
 const StyledTableRow = styled(TableRow)`

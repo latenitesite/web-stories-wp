@@ -15,10 +15,14 @@
  */
 
 /**
+ * External dependencies
+ */
+import { SnackbarProvider } from '@web-stories-wp/design-system';
+
+/**
  * Internal dependencies
  */
 import { renderWithProviders } from '../../../../../testUtils';
-import { SnackbarProvider } from '../../../../../../design-system';
 import {
   STORY_SORT_OPTIONS,
   SORT_DIRECTION,

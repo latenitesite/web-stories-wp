@@ -25,10 +25,6 @@ import { __, sprintf } from '@web-stories-wp/i18n';
 import { useCallback, useEffect, useRef, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeContext } from 'styled-components';
-
-/**
- * Internal dependencies
- */
 import {
   Button,
   BUTTON_SIZES,
@@ -39,7 +35,11 @@ import {
   Text,
   THEME_CONSTANTS,
   useResizeEffect,
-} from '../../../../design-system';
+} from '@web-stories-wp/design-system';
+
+/**
+ * Internal dependencies
+ */
 import { WPBODY_ID } from '../../../constants';
 import { StoryPropType } from '../../../types';
 import useApi from '../../api/useApi';

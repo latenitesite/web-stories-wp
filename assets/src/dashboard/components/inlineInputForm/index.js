@@ -23,9 +23,9 @@ import styled from 'styled-components';
 /**
  * Internal dependencies
  */
+import { Input } from '@web-stories-wp/design-system';
 import { visuallyHiddenStyles } from '../../utils/visuallyHiddenStyles';
-import { useFocusOut } from '../../utils/';
-import { Input } from '../../../design-system';
+import { useFocusOut } from '../../utils';
 
 const Label = styled.label(visuallyHiddenStyles);
 

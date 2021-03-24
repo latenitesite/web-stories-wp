@@ -24,7 +24,11 @@ import { rgba } from 'polished';
 /**
  * Internal dependencies
  */
-import { Icons, Tooltip, TOOLTIP_PLACEMENT } from '../../../design-system';
+import {
+  Icons,
+  Tooltip,
+  TOOLTIP_PLACEMENT,
+} from '@web-stories-wp/design-system';
 import {
   KEYBOARD_USER_SELECTOR,
   VIEW_STYLE,

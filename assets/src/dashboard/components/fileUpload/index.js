@@ -25,15 +25,15 @@ import { __ } from '@web-stories-wp/i18n';
 /**
  * Internal dependencies
  */
-import { DEFAULT_FILE_UPLOAD_TYPES } from '../../constants';
-import { visuallyHiddenStyles } from '../../utils/visuallyHiddenStyles';
 import {
   BUTTON_SIZES,
   BUTTON_TYPES,
   Button,
   Text,
   themeHelpers,
-} from '../../../design-system';
+} from '@web-stories-wp/design-system';
+import { DEFAULT_FILE_UPLOAD_TYPES } from '../../constants';
+import { visuallyHiddenStyles } from '../../utils/visuallyHiddenStyles';
 
 const StyledButton = styled(Button)`
   :focus-within {

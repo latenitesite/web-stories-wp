@@ -17,19 +17,21 @@
 /**
  * External dependencies
  */
-import React from 'react';
+import * as React from 'react';
 import { FlagsProvider } from 'flagged';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import Modal from 'react-modal';
+import {
+  FixtureEvents,
+  ComponentStub,
+  actPromise,
+} from '@web-stories-wp/karma-utils';
 
 /**
  * Internal dependencies
  */
 import App from '../app';
 import ApiProvider from '../app/api/apiProvider';
-import FixtureEvents from '../../karma-fixture/events';
-import ComponentStub from '../../karma-fixture/componentStub';
-import actPromise from '../../karma-fixture/actPromise';
 import { AppFrame } from '../components';
 import ApiProviderFixture from './apiProviderFixture';
 
@@ -183,7 +185,7 @@ export default class Fixture {
 
     const { container } = render(
       <FlagsProvider features={this._flags}>
-        <App key={Math.random()} config={this._config} />
+        <App key={Math.random()} config={this._config} dataAdapter={{}} />
       </FlagsProvider>,
       {
         container: root,

@@ -18,6 +18,7 @@
  */
 import PropTypes from 'prop-types';
 import { useEffect, useRef } from 'react';
+import { PageSizePropType } from '@web-stories-wp/preview';
 
 /**
  * Internal dependencies
@@ -25,7 +26,6 @@ import { useEffect, useRef } from 'react';
 import {
   TemplateActionsPropType,
   TemplatesPropType,
-  PageSizePropType,
   TemplatePropType,
 } from '../../../../types';
 import { Layout, useLayoutContext } from '../../../../components';

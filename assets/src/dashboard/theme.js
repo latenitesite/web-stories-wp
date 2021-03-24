@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,7 @@
  */
 import { createGlobalStyle, ThemeContext } from 'styled-components';
 import { useContext } from 'react';
-
-/**
- * Internal dependencies
- */
-import { themeHelpers } from '../design-system';
+import { themeHelpers } from '@web-stories-wp/design-system';
 
 export const GlobalStyle = createGlobalStyle`
 	*,
@@ -31,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
 	*::before {
 		box-sizing: border-box;
     }
-    
+
   h1, h2, h3, h4, h5, h6, p, a {
     margin: 0;
   }

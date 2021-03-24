@@ -22,8 +22,8 @@ import { fireEvent } from '@testing-library/react';
  * Internal dependencies
  */
 import { act } from 'react-dom/test-utils';
-import { renderWithProviders } from '../../../testUtils/';
-import Tooltip from '../';
+import { renderWithProviders } from '../../../testUtils';
+import Tooltip from '..';
 
 describe('<Tooltip />', function () {
   it('should be not visible when the mouse is not hovering over the container', function () {
