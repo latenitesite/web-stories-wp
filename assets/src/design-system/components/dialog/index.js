@@ -58,7 +58,7 @@ const DialogActions = styled.div`
   & > a {
     margin-right: 10px;
     margin-left: 6px;
-    &:last-of-type {
+    &:last-child {
       margin-right: 0;
     }
   }
